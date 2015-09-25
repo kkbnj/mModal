@@ -1,4 +1,4 @@
-# mScroll plug-in
+# mModal plug-in
 ページ内にモーダルウィンドウを生成するためのjQueryプラグインです。
 
 This is jQuery plug-in that it can generate some modal windows in your web page.
