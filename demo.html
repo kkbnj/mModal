@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width">
+	<meta name="description" content="">
+	<meta name="keywords" content="">
+	<title>Demo page of mModal plug-in</title>
+	<link href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css" rel="stylesheet" type="text/css">
+
+	<style>
+  .mModal-modal {
+    text-align: center;
+    background-color: rgba(230, 194, 73, 0.8);
+  }
+  .blue-modal {
+    text-align: right;
+    background-color: rgba(30, 194, 255, 1);
+  }
+	</style>
+</head>
+
+<body>
+  <div class=mModal-page>
+    <h1>mModal demo</h1>
+    <p><a class="mModal-open" href="#">Open yellow modal</a></p>
+    <p><a class="blue-open" href="#">Open blue modal</a></p>
+    <p>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+      This is mModal demo.<br>
+    </p>
+  </div>
+  <div class="mModal-modal">
+    <div class="mModal-modal_cont">
+      <p>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+        This is yellow modal.<br>
+      </p>
+      <p><a class="mModal-close" href="#">Close modal</a></p>
+    </div>
+  </div>
+  <div class="blue-modal">
+    <div class="blue-modal_cont">
+      <h3>Blue modal.</h3>
+      <p><a class="blue-close" href="#">CLOSE</a></p>
+      <p>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+        This is blue modal.<br>
+      </p>
+    </div>
+  </div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js" type="text/javascript"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js" type="text/javascript"></script>
+<script src="jquery.mModal.js" type="text/javascript"></script>
+<script>
+	$(function() {
+    $.mModal();
+    $.mModal({
+      open_classname: 'blue-open',
+      close_classname: 'blue-close',
+      page_classname: 'mModal-page',
+      modal_classname: 'blue-modal',
+      modal_cont_classname: 'blue-modal_cont',
+      opened_classname: 'blue-opened'
+    });
+	});
+</script>
+
+</body>
+</html>
