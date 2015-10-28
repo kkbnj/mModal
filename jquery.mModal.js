@@ -1,5 +1,5 @@
 /*!
- * jQuery mModal v1.1
+ * jQuery mModal v1.2
  * Copyright 2015 maam.inc
  * Contributing Author: Hiroki Homma
  * Require for jQuery v1.7 or above
@@ -38,7 +38,11 @@
       $close = $('.' + params.close_classname),
 
       open_timeout,
-      animation_method = 'jquery_animate';
+      animation_method = 'jquery_animate',
+
+      android = (window.navigator.userAgent.toLowerCase().indexOf('android') > 0) ? true : false,
+      touch_start,
+      touch_move;
 
     //animation_methodの決定
     if(params.velocity_js === true && typeof $.fn.velocity !== 'undefined') {
@@ -66,6 +70,35 @@
       }
 
       setTimeout(function() {
+        if(android) {
+          //SPタッチ開始位置取得
+          $modal.on('touchstart.mModal', function(e) {
+              touch_start = e.originalEvent.touches[0].pageY;
+          });
+
+          //SPスクロールを停止
+          $(window).on('touchmove.mModal', function(e) {
+              e.preventDefault ? e.preventDefault() : e.returnValue = false;
+              e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+          });
+
+          //Menu内のSPスクロールを有効化
+          $modal.on('touchmove.mModal', function(e) {
+            e.stopPropagation();
+
+            touch_move = touch_start - e.originalEvent.touches[0].pageY;
+
+            if(
+              //メニュー内スクロールより上にスクロールした場合
+              $modal.scrollTop() <= 0 && touch_move < 0 ||
+              //メニュー内スクロールより下にスクロールした場合
+              $modal.scrollTop() >= ($modal_cont.height() - $(window).height()) && touch_move > 0
+            ) {
+              e.preventDefault ? e.preventDefault() : e.returnValue = false;
+            }
+          });
+        }
+
         $body.addClass(params.opened_classname).css({
           overflow: 'hidden'
         });
@@ -76,6 +109,10 @@
 
         if (params.scroll_top) {
           $modal_cont.scrollTop(0);
+
+          if(android) {
+            $modal.scrollTop(0);
+          }
         }
 
         setTimeout(function() {
@@ -163,6 +200,12 @@
 
           $body.removeClass(params.opened_classname);
 
+          if(android) {
+            $modal.off('touchstart.mModal');
+            $(window).off('touchmove.mModal');
+            $modal.off('touchmove.mModal');
+          }
+
           if (typeof params.after_close === 'function') {
             params.after_close(e);
           }
@@ -207,6 +250,16 @@
         height: '100%',
         overflow: 'scroll'
       });
+
+      if(android) {
+        $modal.css({
+          overflow: 'scroll'
+        });
+        $modal_cont.css({
+          height: 'auto',
+          oveflow: 'visible'
+        })
+      }
     }());
   };
 }(jQuery));
