@@ -62,10 +62,10 @@ $.mModal({
   velocity_js: true, //jQueryプラグイン版の`velocity.js`を導入している場合、`velocity.js`アニメーションの使用の可否を設定できます。
   css_animation: true, //CSS3の`transition`アニメーションが使用可能な場合、`transition`アニメーションの使用の可否を設定できます。
 
-  open_before: function(e) {}, //モーダルウィンドウを表示する直前に実行される関数です。パラメータ`e`にはクリックイベントが渡されています。
-  open_after: function(e) {}, //モーダルウィンドウを表示する直後に実行される関数です。パラメータ`e`にはクリックイベントが渡されています。
-  close_before: function(e) {}, //モーダルウィンドウを非表示にする直前に実行される関数です。パラメータ`e`にはクリックイベントが渡されています。
-  close_after: function(e) {}, //モーダルウィンドウを非表示にする直前に実行される関数です。パラメータ`e`にはクリックイベントが渡されています。
+  before_open: function(e) {}, //モーダルウィンドウを表示する直前に実行される関数です。パラメータ`e`にはクリックイベントが渡されています。
+  after_open: function(e) {}, //モーダルウィンドウを表示する直後に実行される関数です。パラメータ`e`にはクリックイベントが渡されています。
+  before_close: function(e) {}, //モーダルウィンドウを非表示にする直前に実行される関数です。パラメータ`e`にはクリックイベントが渡されています。
+  after_close: function(e) {}, //モーダルウィンドウを非表示にする直前に実行される関数です。パラメータ`e`にはクリックイベントが渡されています。
 
   open_classname: 'mModal-open', //モーダルウィンドウを表示するためにクリックする要素のクラス名を変更できます。
   close_classname: 'mModal-close', //モーダルウィンドウを非表示にするためにクリックする要素のクラス名を変更できます。
@@ -87,10 +87,10 @@ $.mModal({
   velocity_js: true, //If you introduce jQuery plug-in of `velocity.js`, whether to use `velocity.js` animation。
   css_animation: true, //If the browser is supported `transition` animation of CSS3, whether to use `transition` animation。
 
-  open_before: function(e) {}, //This is the function that called before the modal window is displayed. `e` parameter has the click event.
-  open_after: function(e) {}, //This is the function that called after the modal window is displayed. `e` parameter has the click event.
-  close_before: function(e) {}, //This is the function that called before the modal window is hidden. `e` parameter has the click event.
-  close_after: function(e) {}, //This is the function that called after the modal window is hidden. `e` parameter has the click event.
+  before_open: function(e) {}, //This is the function that called before the modal window is displayed. `e` parameter has the click event.
+  after_open: function(e) {}, //This is the function that called after the modal window is displayed. `e` parameter has the click event.
+  before_close: function(e) {}, //This is the function that called before the modal window is hidden. `e` parameter has the click event.
+  after_close: function(e) {}, //This is the function that called after the modal window is hidden. `e` parameter has the click event.
 
   open_classname: 'mModal-open', //The class name of the elements that will be clicked for display the modal window.
   close_classname: 'mModal-close', //The class name of the elements that will be clicked for hidden the modal window.
