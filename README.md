@@ -23,25 +23,25 @@ The modal window will be displayed when you click the elements of `mModal-open` 
 ## 使用例 / Example
 
 ```
-	<div class="mModal-page">
-    <h1>Normal Contents</h1>
-    <p><a class="mModal-open" href="#">MODAL OPEN</a></p>
-    <p>This is normal contents.</p>
-	</div>
+<div class="mModal-page">
+  <h1>Normal Contents</h1>
+  <p><a class="mModal-open" href="#">MODAL OPEN</a></p>
+  <p>This is normal contents.</p>
+</div>
 
-	<div class="mModal-modal">
-    <div class="mModal-modal_cont">
-      <h2>Modal Contents</h1>
-      <p><a class="mModal-close" href="#">MODAL CLOSE</a></p>
-      <p>This is modal contents.</p>
-    </div>
-	</div>
+<div class="mModal-modal">
+  <div class="mModal-modal_cont">
+    <h2>Modal Contents</h1>
+    <p><a class="mModal-close" href="#">MODAL CLOSE</a></p>
+    <p>This is modal contents.</p>
+  </div>
+</div>
 
-  <script>
-  $(function() {
-    $.mModal();
-  });
-  </script>
+<script>
+$(function() {
+  $.mModal();
+});
+</script>
 ```
 
 

@@ -1,5 +1,5 @@
 /*!
- * jQuery mModal v1.0
+ * jQuery mModal v1.1
  * Copyright 2015 maam.inc
  * Contributing Author: Hiroki Homma
  * Require for jQuery v1.7 or above
@@ -15,10 +15,10 @@
         velocity_js: true,
         css_animation: true,
 
-        open_before: function(e) {},
-        open_after: function(e) {},
-        close_before: function(e) {},
-        close_after: function(e) {},
+        before_open: function(e) {},
+        after_open: function(e) {},
+        before_close: function(e) {},
+        after_close: function(e) {},
 
         open_classname: 'mModal-open',
         close_classname: 'mModal-close',
@@ -61,8 +61,8 @@
 
     function open(e) {
 
-      if (typeof params.open_before === 'function') {
-        params.open_before(e);
+      if (typeof params.before_open === 'function') {
+        params.before_open(e);
       }
 
       setTimeout(function() {
@@ -109,8 +109,8 @@
             //   visibility: 'hidden'
             // });
 
-            if (typeof params.open_after === 'function') {
-              params.open_after(e);
+            if (typeof params.after_open === 'function') {
+              params.after_open(e);
             }
           }, params.duration + 16);
         }, 16);
@@ -118,8 +118,8 @@
     }
 
     function close(e) {
-      if (typeof params.close_before === 'function') {
-        params.close_before(e);
+      if (typeof params.before_close === 'function') {
+        params.before_close(e);
       }
 
       clearTimeout(open_timeout);
@@ -163,8 +163,8 @@
 
           $body.removeClass(params.opened_classname);
 
-          if (typeof params.close_after === 'function') {
-            params.close_after(e);
+          if (typeof params.after_close === 'function') {
+            params.after_close(e);
           }
         }, params.duration + 16);
       }, 16);
