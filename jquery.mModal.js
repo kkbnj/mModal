@@ -248,12 +248,12 @@
       $modal_cont.css({
         width: '100%',
         height: '100%',
-        overflow: 'scroll'
+        overflow: 'auto'
       });
 
       if(android) {
         $modal.css({
-          overflow: 'scroll'
+          overflow: 'auto'
         });
         $modal_cont.css({
           height: 'auto',
