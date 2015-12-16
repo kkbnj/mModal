@@ -31,7 +31,7 @@ The modal window will be displayed when you click the elements of `mModal-open` 
 
 <div class="mModal-modal">
   <div class="mModal-modal_cont">
-    <h2>Modal Contents</h1>
+    <h2>Modal Contents</h2>
     <p><a class="mModal-close" href="#">MODAL CLOSE</a></p>
     <p>This is modal contents.</p>
   </div>
