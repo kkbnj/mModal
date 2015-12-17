@@ -40,7 +40,23 @@
       open_timeout,
       animation_method = 'jquery_animate',
 
-      android = (window.navigator.userAgent.toLowerCase().indexOf('android') > 0) ? true : false,
+      ua = window.navigator.userAgent.toLowerCase(),
+
+
+      touch_device = (
+        (ua.indexOf("windows") != -1 && ua.indexOf("touch") != -1 && ua.indexOf("tablet pc") == -1)
+        || ua.indexOf("ipad") != -1
+        || ua.indexOf("iphone") != -1
+        || ua.indexOf("ipod") != -1
+        || ua.indexOf("android") != -1
+        || (ua.indexOf("firefox") != -1 && ua.indexOf("tablet") != -1)
+        || (ua.indexOf("firefox") != -1 && ua.indexOf("mobile") != -1)
+        || ua.indexOf("kindle") != -1
+        || ua.indexOf("silk") != -1
+        || ua.indexOf("playbook") != -1
+        || (ua.indexOf("windows") != -1 && ua.indexOf("phone") != -1)
+        || ua.indexOf("blackberry") != -1
+      ) ? true : false,
       touch_start,
       touch_move;
 
@@ -70,7 +86,7 @@
       }
 
       setTimeout(function() {
-        if(android) {
+        if(touch_device) {
           //SPタッチ開始位置取得
           $modal.on('touchstart.mModal', function(e) {
               touch_start = e.originalEvent.touches[0].pageY;
@@ -110,7 +126,7 @@
         if (params.scroll_top) {
           $modal_cont.scrollTop(0);
 
-          if(android) {
+          if(touch_device) {
             $modal.scrollTop(0);
           }
         }
@@ -200,7 +216,7 @@
 
           $body.removeClass(params.opened_classname);
 
-          if(android) {
+          if(touch_device) {
             $modal.off('touchstart.mModal');
             $(window).off('touchmove.mModal');
             $modal.off('touchmove.mModal');
@@ -240,24 +256,30 @@
         height: '100%',
         overflowScrolling: 'touch'
       });
+
       if(animation_method === 'css_transition') {
         $modal.css({
           transition: 'opacity ' + params.duration + 'ms ease-in-out'
         });
       }
+
       $modal_cont.css({
         width: '100%',
-        height: '100%',
-        overflow: 'auto'
+        height: '100%'
       });
 
-      if(android) {
+      if(touch_device) {
         $modal.css({
           overflow: 'auto'
         });
         $modal_cont.css({
           height: 'auto',
           oveflow: 'visible'
+        })
+      } else {
+        $modal_cont.css({
+          height: 'auto',
+          oveflow: 'auto'
         })
       }
     }());
