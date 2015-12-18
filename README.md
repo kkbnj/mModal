@@ -3,6 +3,10 @@
 
 This is jQuery plug-in that it can generate some modal windows in your web page.
 
+
+## デモ/Demo
+http://hommaam.github.io/mModal/
+
 ## 使用方法 / How to use
 jQuery本体の読み込み後、jquery.mModal.jsを読み込みます。
 `$.mModal()`メソッドを使用することで、専用にマークアップされた要素がモーダルウィンドウとして機能します。
@@ -31,7 +35,7 @@ The modal window will be displayed when you click the elements of `mModal-open` 
 
 <div class="mModal-modal">
   <div class="mModal-modal_cont">
-    <h2>Modal Contents</h1>
+    <h2>Modal Contents</h2>
     <p><a class="mModal-close" href="#">MODAL CLOSE</a></p>
     <p>This is modal contents.</p>
   </div>
