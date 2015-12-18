@@ -275,12 +275,11 @@
         $modal_cont.css({
           height: 'auto',
           oveflow: 'visible'
-        })
+        });
       } else {
         $modal_cont.css({
-          height: 'auto',
-          oveflow: 'auto'
-        })
+          overflow: 'auto'
+        });
       }
     }());
   };
