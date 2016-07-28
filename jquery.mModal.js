@@ -1,6 +1,6 @@
 /*!
- * jQuery mModal v1.2
- * Copyright 2015 maam.inc
+ * jQuery mModal v1.3
+ * Copyright 2015-2016 maam.inc
  * Contributing Author: Hiroki Homma
  * Require for jQuery v1.7 or above
  */
@@ -254,7 +254,8 @@
         left: 0,
         width: '100%',
         height: '100%',
-        overflowScrolling: 'touch'
+        overflowScrolling: 'touch',
+        backfaceVisibility: 'hidden'
       });
 
       if(animation_method === 'css_transition') {
