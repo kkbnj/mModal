@@ -36,6 +36,7 @@
       $modal_cont = $('.' + params.modal_cont_classname),
       $page = $('.' + params.page_classname),
       $close = $('.' + params.close_classname),
+      windowH = $(window).outerHeight(),
 
       open_timeout,
       animation_method = 'jquery_animate',
@@ -116,7 +117,8 @@
         }
 
         $body.addClass(params.opened_classname).css({
-          overflow: 'hidden'
+          overflow: 'hidden',
+          minHeight: windowH
         });
 
         $modal.css({
